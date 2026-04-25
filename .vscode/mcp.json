@@ -1,5 +1,4 @@
 {
-  // For more information, visit: https://angular.dev/ai/mcp
   "servers": {
     "angular-cli": {
       "command": "npx",
@@ -9,6 +8,7 @@
       "type": "http",
       "url": "https://stitch.googleapis.com/mcp",
       "headers": {
+        "Accept": "application/json",
         "X-Goog-Api-Key": "${env:STITCH_API_KEY}"
       }
     }
