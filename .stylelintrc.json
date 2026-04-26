@@ -1,0 +1,39 @@
+{
+  "extends": [
+    "stylelint-config-standard-scss",
+    "stylelint-config-recess-order"
+  ],
+  "rules": {
+    "color-no-invalid-hex": true,
+    "shorthand-property-no-redundant-values": true,
+
+    "declaration-block-no-duplicate-properties": true,
+    "declaration-block-no-shorthand-property-overrides": true,
+
+    "selector-class-pattern": "^[a-z][a-z0-9]*(-[a-z0-9]+)*(__[a-z0-9]+(-[a-z0-9]+)*)?(--[a-z0-9]+(-[a-z0-9]+)*)?$",
+
+    "scss/no-global-function-names": true,
+    "scss/at-rule-no-unknown": true,
+    "scss/dollar-variable-pattern": "^[a-z][a-z0-9-]*$",
+    "scss/percent-placeholder-pattern": "^[a-z][a-z0-9-]*$",
+
+    "property-disallowed-list": ["border"],
+
+    "custom-property-pattern": "^(color|font|radius|shadow|mat|spacing|breakpoint|z)-[a-z0-9-]+$",
+
+    "color-hex-length": null,
+    "color-function-notation": null,
+    "color-function-alias-notation": null,
+    "alpha-value-notation": null,
+    "hue-degree-notation": null,
+    "value-keyword-case": null,
+    "no-empty-source": null,
+    "property-no-deprecated": null
+  },
+  "ignoreFiles": [
+    "dist/**",
+    "node_modules/**",
+    "src/styles/vendors/**",
+    "src/styles/themes/_material.scss"
+  ]
+}

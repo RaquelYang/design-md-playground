@@ -1,5 +1,6 @@
 // ─── SCSS Mixins ──────────────────────────────────────────────────────────────
 // 使用方式：在元件 SCSS 中 @use 'styles/abstracts/mixins' as *;
+@use 'sass:map';
 
 // ─── 響應式斷點（DESIGN.md 第 8 節，Mobile-first）────────────────────────────
 $breakpoints: (
@@ -12,12 +13,12 @@ $breakpoints: (
 );
 
 @mixin respond-to($bp) {
-  @if map-has-key($breakpoints, $bp) {
-    @media (min-width: map-get($breakpoints, $bp)) {
+  @if map.has-key($breakpoints, $bp) {
+    @media (min-width: map.get($breakpoints, $bp)) {
       @content;
     }
   } @else {
-    @warn "斷點 `#{$bp}` 不存在，請使用：#{map-keys($breakpoints)}";
+    @warn "斷點 `#{$bp}` 不存在，請使用：#{map.keys($breakpoints)}";
   }
 }
 
@@ -45,15 +46,15 @@ $breakpoints: (
 // ─── 文字截斷 ──────────────────────────────────────────────────────────────
 @mixin text-truncate {
   overflow: hidden;
-  white-space: nowrap;
   text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 @mixin text-clamp($lines: 2) {
   display: -webkit-box;
+  overflow: hidden;
   -webkit-line-clamp: $lines;
   -webkit-box-orient: vertical;
-  overflow: hidden;
 }
 
 // ─── Visually Hidden（螢幕閱讀器可見，視覺隱藏）─────────────────────────────
@@ -64,7 +65,7 @@ $breakpoints: (
   padding: 0;
   margin: -1px;
   overflow: hidden;
-  clip: rect(0, 0, 0, 0);
   white-space: nowrap;
-  border: 0;
+  border-width: 0;
+  clip: rect(0, 0, 0, 0);
 }

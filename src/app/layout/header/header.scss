@@ -10,9 +10,9 @@
     align-items: center;
     justify-content: space-between;
     max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 var(--spacing-md);
     height: 56px;
+    padding: 0 var(--spacing-md);
+    margin: 0 auto;
   }
 
   &__logo {
@@ -32,7 +32,7 @@
 
   &__links {
     display: flex;
-    align-items: center;
     gap: var(--spacing-md);
+    align-items: center;
   }
 }
