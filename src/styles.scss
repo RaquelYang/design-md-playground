@@ -1,8 +1,7 @@
 // ─── Global Styles Entry Point ───────────────────────────────────────────────
 // 順序不可調換：themes/material 必須最先（mat.core() 需最早執行）
-@use 'styles/themes/material';             // Material M3 Theme + 元件覆寫
-@use 'styles/abstracts/variables';         // DESIGN.md CSS 自訂屬性 Token
-@use 'styles/base/reset';                  // CSS Reset + 基礎 body 樣式
-@use 'styles/base/typography';             // 排版輔助類別
-@use 'styles/abstracts/mixins';            // SCSS Mixin（不輸出 CSS，僅定義）
-
+@use "styles/themes/material"; // Material M3 Theme + 元件覆寫
+@use "styles/abstracts/variables"; // DESIGN.md CSS 自訂屬性 Token
+@use "styles/base/reset"; // CSS Reset + 基礎 body 樣式
+@use "styles/base/typography"; // 排版輔助類別
+@use "styles/abstracts/mixins"; // SCSS Mixin（不輸出 CSS，僅定義）

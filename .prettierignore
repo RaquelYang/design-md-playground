@@ -1,0 +1,12 @@
+# 建構產出
+dist/
+.angular/
+
+# 相依套件
+node_modules/
+
+# 自動產生的檔案
+package-lock.json
+
+# 公開靜態資源
+public/

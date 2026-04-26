@@ -2,115 +2,113 @@
 // 唯一來源：DESIGN.md YAML front matter
 // 所有數值變更請以 DESIGN.md 為準，勿在此處硬編碼其他值
 :root {
-  // ─── M3 Color System Overrides（覆寫 mat.all-component-themes 產生的值）──
+    // ─── M3 Color System Overrides（覆寫 mat.all-component-themes 產生的值）──
 
-  // Primary（link blue #0072f5）
-  --mat-sys-primary:                    #0072f5;
-  --mat-sys-on-primary:                 #ffffff;
-  --mat-sys-primary-container:          #ebf5ff;
-  --mat-sys-on-primary-container:       #0068d6;
-  --mat-sys-primary-fixed:              #ebf5ff;
-  --mat-sys-primary-fixed-dim:          #bfdbff;
-  --mat-sys-on-primary-fixed:           #0068d6;
-  --mat-sys-on-primary-fixed-variant:   #004fbf;
-  --mat-sys-inverse-primary:            #8ab4f8;
+    // Primary（link blue #0072f5）
+    --mat-sys-primary: #0072f5;
+    --mat-sys-on-primary: #ffffff;
+    --mat-sys-primary-container: #ebf5ff;
+    --mat-sys-on-primary-container: #0068d6;
+    --mat-sys-primary-fixed: #ebf5ff;
+    --mat-sys-primary-fixed-dim: #bfdbff;
+    --mat-sys-on-primary-fixed: #0068d6;
+    --mat-sys-on-primary-fixed-variant: #004fbf;
+    --mat-sys-inverse-primary: #8ab4f8;
 
-  // Secondary（secondary text #4d4d4d）
-  --mat-sys-secondary:                  #4d4d4d;
-  --mat-sys-on-secondary:               #ffffff;
-  --mat-sys-secondary-container:        #fafafa;
-  --mat-sys-on-secondary-container:     #171717;
-  --mat-sys-secondary-fixed:            #f0f0f0;
-  --mat-sys-secondary-fixed-dim:        #e0e0e0;
-  --mat-sys-on-secondary-fixed:         #171717;
-  --mat-sys-on-secondary-fixed-variant: #4d4d4d;
+    // Secondary（secondary text #4d4d4d）
+    --mat-sys-secondary: #4d4d4d;
+    --mat-sys-on-secondary: #ffffff;
+    --mat-sys-secondary-container: #fafafa;
+    --mat-sys-on-secondary-container: #171717;
+    --mat-sys-secondary-fixed: #f0f0f0;
+    --mat-sys-secondary-fixed-dim: #e0e0e0;
+    --mat-sys-on-secondary-fixed: #171717;
+    --mat-sys-on-secondary-fixed-variant: #4d4d4d;
 
-  // Tertiary（preview pink #de1d8d）
-  --mat-sys-tertiary:                   #de1d8d;
-  --mat-sys-on-tertiary:                #ffffff;
-  --mat-sys-tertiary-container:         #fce4f3;
-  --mat-sys-on-tertiary-container:      #8c0050;
-  --mat-sys-tertiary-fixed:             #fce4f3;
-  --mat-sys-tertiary-fixed-dim:         #f7b8de;
-  --mat-sys-on-tertiary-fixed:          #8c0050;
-  --mat-sys-on-tertiary-fixed-variant:  #b5006e;
+    // Tertiary（preview pink #de1d8d）
+    --mat-sys-tertiary: #de1d8d;
+    --mat-sys-on-tertiary: #ffffff;
+    --mat-sys-tertiary-container: #fce4f3;
+    --mat-sys-on-tertiary-container: #8c0050;
+    --mat-sys-tertiary-fixed: #fce4f3;
+    --mat-sys-tertiary-fixed-dim: #f7b8de;
+    --mat-sys-on-tertiary-fixed: #8c0050;
+    --mat-sys-on-tertiary-fixed-variant: #b5006e;
 
-  // Error（ship red #ff5b4f）
-  --mat-sys-error:                      #ff5b4f;
-  --mat-sys-on-error:                   #ffffff;
-  --mat-sys-error-container:            #ffe9e8;
-  --mat-sys-on-error-container:         #cc2a1f;
+    // Error（ship red #ff5b4f）
+    --mat-sys-error: #ff5b4f;
+    --mat-sys-on-error: #ffffff;
+    --mat-sys-error-container: #ffe9e8;
+    --mat-sys-on-error-container: #cc2a1f;
 
-  // Surface & Background
-  --mat-sys-background:                 #ffffff;
-  --mat-sys-on-background:              #171717;
-  --mat-sys-surface:                    #ffffff;
-  --mat-sys-on-surface:                 #171717;
-  --mat-sys-surface-variant:            #fafafa;
-  --mat-sys-on-surface-variant:         #4d4d4d;
-  --mat-sys-surface-dim:                #f5f5f5;
-  --mat-sys-surface-bright:             #ffffff;
-  --mat-sys-surface-container-lowest:   #ffffff;
-  --mat-sys-surface-container-low:      #fafafa;
-  --mat-sys-surface-container:          #f5f5f5;
-  --mat-sys-surface-container-high:     #ebebeb;
-  --mat-sys-surface-container-highest:  #e0e0e0;
-  --mat-sys-surface-tint:               #0072f5;
-  --mat-sys-inverse-surface:            #171717;
-  --mat-sys-inverse-on-surface:         #ffffff;
-  --mat-sys-scrim:                      rgba(0, 0, 0, 0.32);
+    // Surface & Background
+    --mat-sys-background: #ffffff;
+    --mat-sys-on-background: #171717;
+    --mat-sys-surface: #ffffff;
+    --mat-sys-on-surface: #171717;
+    --mat-sys-surface-variant: #fafafa;
+    --mat-sys-on-surface-variant: #4d4d4d;
+    --mat-sys-surface-dim: #f5f5f5;
+    --mat-sys-surface-bright: #ffffff;
+    --mat-sys-surface-container-lowest: #ffffff;
+    --mat-sys-surface-container-low: #fafafa;
+    --mat-sys-surface-container: #f5f5f5;
+    --mat-sys-surface-container-high: #ebebeb;
+    --mat-sys-surface-container-highest: #e0e0e0;
+    --mat-sys-surface-tint: #0072f5;
+    --mat-sys-inverse-surface: #171717;
+    --mat-sys-inverse-on-surface: #ffffff;
+    --mat-sys-scrim: rgba(0, 0, 0, 0.32);
 
-  // Outline（border → shadow 替代哲學，#ebebeb）
-  --mat-sys-outline:                    #ebebeb;
-  --mat-sys-outline-variant:            #f0f0f0;
+    // Outline（border → shadow 替代哲學，#ebebeb）
+    --mat-sys-outline: #ebebeb;
+    --mat-sys-outline-variant: #f0f0f0;
 
-  // Focus ring（DESIGN.md focus token）
-  --mat-sys-focus-ring:                 hsla(212, 100%, 48%, 1);
+    // Focus ring（DESIGN.md focus token）
+    --mat-sys-focus-ring: hsla(212, 100%, 48%, 1);
 
-  // ─── DESIGN.md 色彩 Token ─────────────────────────────────────────────────
-  --color-bg:             #ffffff;
-  --color-text-primary:   #171717;
-  --color-text-secondary: #4d4d4d;
-  --color-text-muted:     #666666;
-  --color-placeholder:    #808080;
-  --color-border:         #ebebeb;
-  --color-surface:        #fafafa;
-  --color-link:           #0072f5;
-  --color-focus:          hsla(212, 100%, 48%, 1);
-  --color-badge-bg:       #ebf5ff;
-  --color-badge-text:     #0068d6;
+    // ─── DESIGN.md 色彩 Token ─────────────────────────────────────────────────
+    --color-bg: #ffffff;
+    --color-text-primary: #171717;
+    --color-text-secondary: #4d4d4d;
+    --color-text-muted: #666666;
+    --color-placeholder: #808080;
+    --color-border: #ebebeb;
+    --color-surface: #fafafa;
+    --color-link: #0072f5;
+    --color-focus: hsla(212, 100%, 48%, 1);
+    --color-badge-bg: #ebf5ff;
+    --color-badge-text: #0068d6;
 
-  // Workflow 強調色（僅限對應 Workflow 情境使用）
-  --color-ship:    #ff5b4f;
-  --color-preview: #de1d8d;
-  --color-develop: #0a72ef;
+    // Workflow 強調色（僅限對應 Workflow 情境使用）
+    --color-ship: #ff5b4f;
+    --color-preview: #de1d8d;
+    --color-develop: #0a72ef;
 
-  // ─── 圓角（DESIGN.md rounded token）──────────────────────────────────────
-  --radius-micro:  2px;
-  --radius-subtle: 4px;
-  --radius-button: 6px;
-  --radius-card:   8px;
-  --radius-image:  12px;
-  --radius-pill:   9999px;
+    // ─── 圓角（DESIGN.md rounded token）──────────────────────────────────────
+    --radius-micro: 2px;
+    --radius-subtle: 4px;
+    --radius-button: 6px;
+    --radius-card: 8px;
+    --radius-image: 12px;
+    --radius-pill: 9999px;
 
-  // ─── 陰影（shadow-as-border 哲學，替代傳統 border）───────────────────────
-  --shadow-border: rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
-  --shadow-ring:   rgb(235, 235, 235) 0px 0px 0px 1px;
-  --shadow-card:
-    rgba(0, 0, 0, 0.08) 0px 0px 0px 1px,
-    rgba(0, 0, 0, 0.04) 0px 2px 2px,
-    rgba(0, 0, 0, 0.04) 0px 8px 8px -8px,
-    #fafafa 0px 0px 0px 1px;
+    // ─── 陰影（shadow-as-border 哲學，替代傳統 border）───────────────────────
+    --shadow-border: rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+    --shadow-ring: rgb(235, 235, 235) 0px 0px 0px 1px;
+    --shadow-card:
+        rgba(0, 0, 0, 0.08) 0px 0px 0px 1px, rgba(0, 0, 0, 0.04) 0px 2px 2px,
+        rgba(0, 0, 0, 0.04) 0px 8px 8px -8px, #fafafa 0px 0px 0px 1px;
 
-  // ─── Typography（字型系列）────────────────────────────────────────────────
-  --font-sans: 'Geist', Arial, 'Apple Color Emoji', 'Segoe UI Emoji', sans-serif;
-  --font-mono: 'Geist Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, monospace;
+    // ─── Typography（字型系列）────────────────────────────────────────────────
+    --font-sans: "Geist", Arial, "Apple Color Emoji", "Segoe UI Emoji", sans-serif;
+    --font-mono: "Geist Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, monospace;
 
-  // ─── Spacing（DESIGN.md spacing token）───────────────────────────────────
-  --spacing-xs:      4px;
-  --spacing-sm:      8px;
-  --spacing-md:      16px;
-  --spacing-lg:      32px;
-  --spacing-xl:      40px;
-  --spacing-section: 80px;
+    // ─── Spacing（DESIGN.md spacing token）───────────────────────────────────
+    --spacing-xs: 4px;
+    --spacing-sm: 8px;
+    --spacing-md: 16px;
+    --spacing-lg: 32px;
+    --spacing-xl: 40px;
+    --spacing-section: 80px;
 }

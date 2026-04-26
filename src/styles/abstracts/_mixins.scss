@@ -1,71 +1,71 @@
 // ─── SCSS Mixins ──────────────────────────────────────────────────────────────
 // 使用方式：在元件 SCSS 中 @use 'styles/abstracts/mixins' as *;
-@use 'sass:map';
+@use "sass:map";
 
 // ─── 響應式斷點（DESIGN.md 第 8 節，Mobile-first）────────────────────────────
 $breakpoints: (
-  'mobile-sm':  400px,
-  'mobile':     600px,
-  'tablet-sm':  768px,
-  'tablet':     1024px,
-  'desktop':    1200px,
-  'desktop-lg': 1400px,
+    "mobile-sm": 400px,
+    "mobile": 600px,
+    "tablet-sm": 768px,
+    "tablet": 1024px,
+    "desktop": 1200px,
+    "desktop-lg": 1400px,
 );
 
 @mixin respond-to($bp) {
-  @if map.has-key($breakpoints, $bp) {
-    @media (min-width: map.get($breakpoints, $bp)) {
-      @content;
+    @if map.has-key($breakpoints, $bp) {
+        @media (min-width: map.get($breakpoints, $bp)) {
+            @content;
+        }
+    } @else {
+        @warn "斷點 `#{$bp}` 不存在，請使用：#{map.keys($breakpoints)}";
     }
-  } @else {
-    @warn "斷點 `#{$bp}` 不存在，請使用：#{map.keys($breakpoints)}";
-  }
 }
 
 // ─── Focus Ring（WCAG AA 無障礙必要）────────────────────────────────────────
 @mixin focus-ring($offset: 2px) {
-  &:focus-visible {
-    outline: 2px solid var(--color-focus);
-    outline-offset: $offset;
-  }
+    &:focus-visible {
+        outline: 2px solid var(--color-focus);
+        outline-offset: $offset;
+    }
 }
 
 // ─── Shadow-as-Border（DESIGN.md 核心哲學，替代 CSS border）─────────────────
 @mixin shadow-border {
-  box-shadow: var(--shadow-border);
+    box-shadow: var(--shadow-border);
 }
 
 @mixin shadow-ring {
-  box-shadow: var(--shadow-ring);
+    box-shadow: var(--shadow-ring);
 }
 
 @mixin shadow-card {
-  box-shadow: var(--shadow-card);
+    box-shadow: var(--shadow-card);
 }
 
 // ─── 文字截斷 ──────────────────────────────────────────────────────────────
 @mixin text-truncate {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 @mixin text-clamp($lines: 2) {
-  display: -webkit-box;
-  overflow: hidden;
-  -webkit-line-clamp: $lines;
-  -webkit-box-orient: vertical;
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-line-clamp: $lines;
+    -webkit-box-orient: vertical;
 }
 
 // ─── Visually Hidden（螢幕閱讀器可見，視覺隱藏）─────────────────────────────
 @mixin visually-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  white-space: nowrap;
-  border-width: 0;
-  clip: rect(0, 0, 0, 0);
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    white-space: nowrap;
+    border-width: 0;
+    clip: rect(0, 0, 0, 0);
 }
