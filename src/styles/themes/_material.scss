@@ -6,13 +6,13 @@
 @include mat.core();
 
 // ─── M3 Theme Definition ─────────────────────────────────────────────────────
-// Primary  → Azure 藍，對應 DESIGN.md link/develop #0072f5
+// Primary  → Emerald 綠，對應 DESIGN.md link/develop #059669
 // Tertiary → Rose 玫瑰，對應 DESIGN.md preview #de1d8d
 $geist-theme: mat.define-theme(
     (
         color: (
             theme-type: light,
-            primary: mat.$azure-palette,
+            primary: mat.$green-palette,
             tertiary: mat.$rose-palette,
         ),
         typography: (

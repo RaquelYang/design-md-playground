@@ -88,12 +88,14 @@ src/
 ## Agent Prompt 速查
 
 ### 元件 Prompt 範本
+
 - 「生成 Hero 區塊：白色背景，48px Geist weight 600 標題，letter-spacing -2.4px，#171717 色。次標題 20px weight 400，#4d4d4d。深色 CTA 按鈕（#171717，6px 圓角，8px 16px padding）與白色 ghost 按鈕（陰影邊框，6px 圓角）。」
 - 「生成卡片：白色背景，禁止 CSS border，使用陰影堆疊邊框。8px 圓角。標題 24px Geist weight 600，letter-spacing -0.96px。內文 16px weight 400，#4d4d4d。」
-- 「生成 Pill badge：#ebf5ff 背景，#0068d6 文字，9999px 圓角，0px 10px padding，12px Geist weight 500。」
-- 「生成 Workflow 區塊，三步驟：Develop（#0a72ef）→ Preview（#de1d8d）→ Ship（#ff5b4f）。各步驟：14px Geist Mono uppercase 標籤 + 24px weight 600 標題 + 16px weight 400 說明文字。」
+- 「生成 Pill badge：#ecfdf5 背景，#047857 文字，9999px 圓角，0px 10px padding，12px Geist weight 500。」
+- 「生成 Workflow 區塊，三步驟：Develop（#10b981）→ Preview（#de1d8d）→ Ship（#ff5b4f）。各步驟：14px Geist Mono uppercase 標籤 + 24px weight 600 標題 + 16px weight 400 說明文字。」
 
 ### 迭代原則
+
 1. 陰影替代邊框 — `var(--shadow-border)` 是所有邊框的基礎（陰影值見 DESIGN.md Elevation & Depth）
 2. Letter-spacing 隨字體縮放，以 DESIGN.md Typography token 為準
 3. 三種字重：400（閱讀）/ 500（互動）/ 600（強調），嚴格對應
