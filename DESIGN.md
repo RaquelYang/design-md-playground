@@ -1,6 +1,169 @@
+---
+colors:
+  primary: "#171717"
+  background: "#ffffff"
+  secondary-text: "#4d4d4d"
+  muted: "#666666"
+  placeholder: "#808080"
+  border: "#ebebeb"
+  surface: "#fafafa"
+  link: "#0072f5"
+  focus: "hsla(212, 100%, 48%, 1)"
+  badge-bg: "#ebf5ff"
+  badge-text: "#0068d6"
+  ship: "#ff5b4f"
+  preview: "#de1d8d"
+  develop: "#0a72ef"
+
+typography:
+  display-hero:
+    fontFamily: "Geist, Arial, Apple Color Emoji, Segoe UI Emoji, sans-serif"
+    fontSize: 48px
+    fontWeight: 600
+    lineHeight: "1.1"
+    letterSpacing: "-2.88px"
+  section-heading:
+    fontFamily: "Geist, Arial, Apple Color Emoji, Segoe UI Emoji, sans-serif"
+    fontSize: 40px
+    fontWeight: 600
+    lineHeight: "1.2"
+    letterSpacing: "-2.4px"
+  sub-heading-lg:
+    fontFamily: "Geist, Arial, Apple Color Emoji, Segoe UI Emoji, sans-serif"
+    fontSize: 32px
+    fontWeight: 600
+    lineHeight: "1.25"
+    letterSpacing: "-1.28px"
+  card-title:
+    fontFamily: "Geist, Arial, Apple Color Emoji, Segoe UI Emoji, sans-serif"
+    fontSize: 24px
+    fontWeight: 600
+    lineHeight: "1.33"
+    letterSpacing: "-0.96px"
+  body-lg:
+    fontFamily: "Geist, Arial, Apple Color Emoji, Segoe UI Emoji, sans-serif"
+    fontSize: 20px
+    fontWeight: 400
+    lineHeight: "1.8"
+    letterSpacing: "normal"
+  body-md:
+    fontFamily: "Geist, Arial, Apple Color Emoji, Segoe UI Emoji, sans-serif"
+    fontSize: 16px
+    fontWeight: 400
+    lineHeight: "1.5"
+    letterSpacing: "normal"
+  body-ui:
+    fontFamily: "Geist, Arial, Apple Color Emoji, Segoe UI Emoji, sans-serif"
+    fontSize: 14px
+    fontWeight: 500
+    lineHeight: "1.43"
+    letterSpacing: "normal"
+  caption:
+    fontFamily: "Geist, Arial, Apple Color Emoji, Segoe UI Emoji, sans-serif"
+    fontSize: 12px
+    fontWeight: 400
+    lineHeight: "1.33"
+    letterSpacing: "normal"
+  mono-body:
+    fontFamily: "Geist Mono, ui-monospace, SFMono-Regular, Menlo, Monaco, monospace"
+    fontSize: 16px
+    fontWeight: 400
+    lineHeight: "1.5"
+    letterSpacing: "normal"
+  mono-label:
+    fontFamily: "Geist Mono, ui-monospace, SFMono-Regular, Menlo, Monaco, monospace"
+    fontSize: 12px
+    fontWeight: 500
+    lineHeight: "1"
+    letterSpacing: "normal"
+
+spacing:
+  xs: 4px
+  sm: 8px
+  md: 16px
+  lg: 32px
+  xl: 40px
+  section: 80px
+
+rounded:
+  micro: 2px
+  subtle: 4px
+  button: 6px
+  card: 8px
+  image: 12px
+  pill: 9999px
+
+components:
+  button-primary:
+    backgroundColor: "{colors.primary}"
+    textColor: "{colors.background}"
+    typography: "{typography.body-ui}"
+    rounded: "{rounded.button}"
+    padding: "{spacing.md}"
+  button-secondary:
+    backgroundColor: "{colors.background}"
+    textColor: "{colors.primary}"
+    typography: "{typography.body-ui}"
+    rounded: "{rounded.button}"
+    padding: "{spacing.md}"
+  badge:
+    backgroundColor: "{colors.badge-bg}"
+    textColor: "{colors.badge-text}"
+    typography: "{typography.caption}"
+    rounded: "{rounded.pill}"
+  card:
+    backgroundColor: "{colors.background}"
+    textColor: "{colors.primary}"
+    typography: "{typography.body-md}"
+    rounded: "{rounded.card}"
+  nav-link:
+    textColor: "{colors.primary}"
+    typography: "{typography.body-ui}"
+  body-text:
+    backgroundColor: "{colors.background}"
+    textColor: "{colors.secondary-text}"
+    typography: "{typography.body-md}"
+  caption-text:
+    backgroundColor: "{colors.background}"
+    textColor: "{colors.muted}"
+    typography: "{typography.caption}"
+  input-field:
+    backgroundColor: "{colors.background}"
+    textColor: "{colors.primary}"
+    typography: "{typography.body-md}"
+    rounded: "{rounded.button}"
+  link:
+    textColor: "{colors.link}"
+    typography: "{typography.body-ui}"
+  placeholder-text:
+    textColor: "{colors.placeholder}"
+    typography: "{typography.body-md}"
+  divider:
+    backgroundColor: "{colors.border}"
+  surface-card:
+    backgroundColor: "{colors.surface}"
+    textColor: "{colors.primary}"
+    typography: "{typography.body-md}"
+    rounded: "{rounded.card}"
+  focus-ring:
+    backgroundColor: "{colors.focus}"
+  workflow-develop:
+    backgroundColor: "{colors.background}"
+    textColor: "{colors.develop}"
+    typography: "{typography.body-ui}"
+  workflow-preview:
+    backgroundColor: "{colors.background}"
+    textColor: "{colors.preview}"
+    typography: "{typography.body-ui}"
+  workflow-ship:
+    backgroundColor: "{colors.background}"
+    textColor: "{colors.ship}"
+    typography: "{typography.body-ui}"
+---
+
 # Design System Inspired by Vercel
 
-## 1. Visual Theme & Atmosphere
+## Overview
 
 Vercel's website is the visual thesis of developer infrastructure made invisible — a design system so restrained it borders on philosophical. The page is overwhelmingly white (`#ffffff`) with near-black (`#171717`) text, creating a gallery-like emptiness where every element earns its pixel. This isn't minimalism as decoration; it's minimalism as engineering principle. The Geist design system treats the interface like a compiler treats code — every unnecessary token is stripped away until only structure remains.
 
@@ -18,7 +181,7 @@ What distinguishes Vercel from other monochrome design systems is its shadow-as-
 - Focus ring system using `hsla(212, 100%, 48%, 1)` — a saturated blue for accessibility
 - Pill badges (9999px) with tinted backgrounds for status indicators
 
-## 2. Color Palette & Roles
+## Colors
 
 ### Primary
 - **Vercel Black** (`#171717`): Primary text, headings, dark surface backgrounds. Not pure black — the slight warmth prevents harshness.
@@ -60,7 +223,7 @@ What distinguishes Vercel from other monochrome design systems is its shadow-as-
 - **Card Stack** (`rgba(0,0,0,0.08) 0px 0px 0px 1px, rgba(0,0,0,0.04) 0px 2px 2px, rgba(0,0,0,0.04) 0px 8px 8px -8px, #fafafa 0px 0px 0px 1px`): Full multi-layer card shadow.
 - **Ring Border** (`rgb(235, 235, 235) 0px 0px 0px 1px`): Light gray ring-border for tabs and images.
 
-## 3. Typography Rules
+## Typography
 
 ### Font Family
 - **Primary**: `Geist`, with fallbacks: `Arial, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol`
@@ -96,7 +259,59 @@ What distinguishes Vercel from other monochrome design systems is its shadow-as-
 - **Three weights, strict roles**: 400 (body/reading), 500 (UI/interactive), 600 (headings/emphasis). No bold (700) except for tiny micro-badges. This narrow weight range creates hierarchy through size and tracking, not weight.
 - **Mono for identity**: Geist Mono in uppercase with `"tnum"` or `"liga"` serves as the "developer console" voice — compact technical labels that connect the marketing site to the product.
 
-## 4. Component Stylings
+## Layout
+
+### Spacing System
+- Base unit: 8px
+- Scale: 1px, 2px, 3px, 4px, 5px, 6px, 8px, 10px, 12px, 14px, 16px, 32px, 36px, 40px
+- Notable gap: jumps from 16px to 32px — no 20px or 24px in primary scale
+
+### Grid & Container
+- Max content width: approximately 1200px
+- Hero: centered single-column with generous top padding
+- Feature sections: 2–3 column grids for cards
+- Full-width dividers using `border-bottom: 1px solid #171717`
+- Code/dashboard screenshots as full-width or contained with border
+
+### Whitespace Philosophy
+- **Gallery emptiness**: Massive vertical padding between sections (80px–120px+). The white space IS the design — it communicates that Vercel has nothing to prove and nothing to hide.
+- **Compressed text, expanded space**: The aggressive negative letter-spacing on headlines is counterbalanced by generous surrounding whitespace. The text is dense; the space around it is vast.
+- **Section rhythm**: White sections alternate with white sections — there's no color variation between sections. Separation comes from borders (shadow-borders) and spacing alone.
+
+### Border Radius Scale
+- Micro (2px): Inline code snippets, small spans
+- Subtle (4px): Small containers
+- Standard (6px): Buttons, links, functional elements
+- Comfortable (8px): Cards, list items
+- Image (12px): Featured cards, image containers (top-rounded)
+- Large (64px): Tab navigation pills
+- XL (100px): Large navigation links
+- Full Pill (9999px): Badges, status pills, tags
+- Circle (50%): Menu toggle, avatar containers
+
+## Elevation & Depth
+
+| Level | Treatment | Use |
+|-------|-----------|-----|
+| Flat (Level 0) | No shadow | Page background, text blocks |
+| Ring (Level 1) | `rgba(0,0,0,0.08) 0px 0px 0px 1px` | Shadow-as-border for most elements |
+| Light Ring (Level 1b) | `rgb(235,235,235) 0px 0px 0px 1px` | Lighter ring for tabs, images |
+| Subtle Card (Level 2) | Ring + `rgba(0,0,0,0.04) 0px 2px 2px` | Standard cards with minimal lift |
+| Full Card (Level 3) | Ring + Subtle + `rgba(0,0,0,0.04) 0px 8px 8px -8px` + inner `#fafafa` ring | Featured cards, highlighted panels |
+| Focus (Accessibility) | `2px solid hsla(212, 100%, 48%, 1)` outline | Keyboard focus on all interactive elements |
+
+**Shadow Philosophy**: Vercel has arguably the most sophisticated shadow system in modern web design. Rather than using shadows for elevation in the traditional Material Design sense, Vercel uses multi-value shadow stacks where each layer has a distinct architectural purpose: one creates the "border" (0px spread, 1px), another adds ambient softness (2px blur), another handles depth at distance (8px blur with negative spread), and an inner ring (`#fafafa`) creates the subtle highlight that makes the card "glow" from within. This layered approach means cards feel built, not floating.
+
+### Decorative Depth
+- Hero gradient: soft, pastel multi-color gradient wash behind hero content (barely visible, atmospheric)
+- Section borders: `1px solid #171717` (full dark line) between major sections
+- No background color variation — depth comes entirely from shadow layering and border contrast
+
+## Shapes
+
+The Vercel design system uses a minimal border radius scale. Radius values increase with the visual importance and softness of the element, from micro inline code (2px) to full pill badges (9999px). The `image` radius (12px) applies only to the top corners of image-topped cards, creating a photo-frame effect without rounding the bottom edge.
+
+## Components
 
 ### Buttons
 
@@ -178,55 +393,7 @@ What distinguishes Vercel from other monochrome design systems is its shadow-as-
 - Description below in gray body text
 - Shadow-bordered card container
 
-## 5. Layout Principles
-
-### Spacing System
-- Base unit: 8px
-- Scale: 1px, 2px, 3px, 4px, 5px, 6px, 8px, 10px, 12px, 14px, 16px, 32px, 36px, 40px
-- Notable gap: jumps from 16px to 32px — no 20px or 24px in primary scale
-
-### Grid & Container
-- Max content width: approximately 1200px
-- Hero: centered single-column with generous top padding
-- Feature sections: 2–3 column grids for cards
-- Full-width dividers using `border-bottom: 1px solid #171717`
-- Code/dashboard screenshots as full-width or contained with border
-
-### Whitespace Philosophy
-- **Gallery emptiness**: Massive vertical padding between sections (80px–120px+). The white space IS the design — it communicates that Vercel has nothing to prove and nothing to hide.
-- **Compressed text, expanded space**: The aggressive negative letter-spacing on headlines is counterbalanced by generous surrounding whitespace. The text is dense; the space around it is vast.
-- **Section rhythm**: White sections alternate with white sections — there's no color variation between sections. Separation comes from borders (shadow-borders) and spacing alone.
-
-### Border Radius Scale
-- Micro (2px): Inline code snippets, small spans
-- Subtle (4px): Small containers
-- Standard (6px): Buttons, links, functional elements
-- Comfortable (8px): Cards, list items
-- Image (12px): Featured cards, image containers (top-rounded)
-- Large (64px): Tab navigation pills
-- XL (100px): Large navigation links
-- Full Pill (9999px): Badges, status pills, tags
-- Circle (50%): Menu toggle, avatar containers
-
-## 6. Depth & Elevation
-
-| Level | Treatment | Use |
-|-------|-----------|-----|
-| Flat (Level 0) | No shadow | Page background, text blocks |
-| Ring (Level 1) | `rgba(0,0,0,0.08) 0px 0px 0px 1px` | Shadow-as-border for most elements |
-| Light Ring (Level 1b) | `rgb(235,235,235) 0px 0px 0px 1px` | Lighter ring for tabs, images |
-| Subtle Card (Level 2) | Ring + `rgba(0,0,0,0.04) 0px 2px 2px` | Standard cards with minimal lift |
-| Full Card (Level 3) | Ring + Subtle + `rgba(0,0,0,0.04) 0px 8px 8px -8px` + inner `#fafafa` ring | Featured cards, highlighted panels |
-| Focus (Accessibility) | `2px solid hsla(212, 100%, 48%, 1)` outline | Keyboard focus on all interactive elements |
-
-**Shadow Philosophy**: Vercel has arguably the most sophisticated shadow system in modern web design. Rather than using shadows for elevation in the traditional Material Design sense, Vercel uses multi-value shadow stacks where each layer has a distinct architectural purpose: one creates the "border" (0px spread, 1px), another adds ambient softness (2px blur), another handles depth at distance (8px blur with negative spread), and an inner ring (`#fafafa`) creates the subtle highlight that makes the card "glow" from within. This layered approach means cards feel built, not floating.
-
-### Decorative Depth
-- Hero gradient: soft, pastel multi-color gradient wash behind hero content (barely visible, atmospheric)
-- Section borders: `1px solid #171717` (full dark line) between major sections
-- No background color variation — depth comes entirely from shadow layering and border contrast
-
-## 7. Do's and Don'ts
+## Do's and Don'ts
 
 ### Do
 - Use Geist Sans with aggressive negative letter-spacing at display sizes (-2.4px to -2.88px at 48px)
@@ -249,7 +416,7 @@ What distinguishes Vercel from other monochrome design systems is its shadow-as-
 - Don't use pill radius (9999px) on primary action buttons — pills are for badges/tags only
 - Don't skip the inner `#fafafa` ring in card shadows — it's the glow that makes the system work
 
-## 8. Responsive Behavior
+## Responsive Behavior
 
 ### Breakpoints
 | Name | Width | Key Changes |
@@ -283,7 +450,7 @@ What distinguishes Vercel from other monochrome design systems is its shadow-as-
 - Product screenshots use responsive images with consistent border radius
 - Full-width sections maintain edge-to-edge treatment
 
-## 9. Agent Prompt Guide
+## Agent Prompt Guide
 
 ### Quick Color Reference
 - Primary CTA: Vercel Black (`#171717`)
