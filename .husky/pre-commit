@@ -1,1 +1,6 @@
+# 載入 nvm，確保使用 .nvmrc 指定的 Node 版本（修正 VS Code Git GUI 使用系統 Node 的問題）
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+nvm use --silent
+
 npx lint-staged
