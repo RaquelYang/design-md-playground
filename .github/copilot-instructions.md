@@ -139,6 +139,7 @@ async function fetchData(): Promise<UserProfile[]> {
 
 ```scss
 // _variables.scss — 統一 CSS 自訂屬性
+// ⚠️ 所有數值來源：DESIGN.md YAML front matter token，如需調整請以 DESIGN.md 為準
 :root {
   // 色彩系統
   --color-bg: #ffffff;
@@ -219,14 +220,7 @@ async function fetchData(): Promise<UserProfile[]> {
 
 ### 排版 Letter Spacing 規則
 
-| 字體大小 | Letter Spacing |
-|---------|---------------|
-| 48px | -2.88px |
-| 40px | -2.4px |
-| 32px | -1.28px |
-| 24px | -0.96px |
-| 16px | -0.32px |
-| 14px 以下 | normal |
+各字體尺寸對應的 letter-spacing 數值以 [`DESIGN.md` Typography 章節](../DESIGN.md) 的 `typography` token 為唯一來源，請勿在此處或程式碼中硬編碼。
 
 ---
 
@@ -292,7 +286,7 @@ $breakpoints: (
 
 - 所有互動元件必須有 `aria-label` 或 `aria-labelledby`
 - 所有圖片必須有 `alt` 屬性
-- Focus Ring：`2px solid hsla(212,100%,48%,1)`（使用 `:focus-visible` 偽類）
+- Focus Ring：`2px solid var(--color-focus)`（使用 `:focus-visible` 偽類，色值定義於 `_variables.scss`，來源為 DESIGN.md `focus` token）
 - 語意化 HTML：`<nav>`、`<main>`、`<section>`、`<article>`、`<header>`、`<footer>`
 - 色彩對比度符合 WCAG AA 標準（4.5:1 正文，3:1 大字）
 

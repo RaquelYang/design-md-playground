@@ -38,69 +38,16 @@
 
 ## 設計系統實作規則
 
-> 完整設計規格請參閱 [`DESIGN.md`](./DESIGN.md)，以下為 Agent 必須遵守的核心規則。
+> 所有設計數值（色彩、字型、間距、陰影、圓角）以 [`DESIGN.md`](./DESIGN.md) 的 YAML token 為唯一來源，
+> 程式碼中不硬編碼設計數值，改透過 CSS 自訂屬性（`--variable`）引用。
 
-### 色彩
+### 核心原則
 
-| 用途 | 值 |
-|------|----|
-| 主要文字 / 深色背景 | `#171717`（Vercel Black，非純黑）|
-| 頁面背景 | `#ffffff` |
-| 次要文字 | `#4d4d4d` |
-| 邊框（使用陰影技法） | `rgba(0,0,0,0.08) 0px 0px 0px 1px` |
-| 連結 | `#0072f5` |
-| Focus Ring | `hsla(212,100%,48%,1)` |
-
-- **禁止**在 UI Chrome 中引入暖色調（橘、黃、綠）
-- Workflow 強調色（Ship Red `#ff5b4f`、Preview Pink `#de1d8d`、Develop Blue `#0a72ef`）僅用於對應 Workflow 情境
-
-### 陰影替代邊框
-
-所有元件**禁止使用** `border` CSS 屬性建立邊框，改用陰影技法：
-
-```scss
-// 標準邊框陰影
-box-shadow: rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
-
-// 完整卡片陰影堆疊
-box-shadow:
-  rgba(0,0,0,0.08) 0px 0px 0px 1px,
-  rgba(0,0,0,0.04) 0px 2px 2px,
-  rgba(0,0,0,0.04) 0px 8px 8px -8px,
-  #fafafa 0px 0px 0px 1px;
-```
-
-### 字型
-
-```scss
-// 全域啟用 Ligature
-font-family: 'Geist', Arial, 'Apple Color Emoji', 'Segoe UI Emoji', sans-serif;
-font-feature-settings: "liga";
-
-// 等寬字型
-font-family: 'Geist Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, monospace;
-```
-
-**字重系統（三種，嚴格對應）**：
-- `400`：內文 / 閱讀
-- `500`：UI 元素 / 互動
-- `600`：標題 / 強調
-
-**Letter Spacing（依尺寸）**：
-- `48px` → `-2.88px`
-- `40px` → `-2.4px`
-- `32px` → `-1.28px`
-- `24px` → `-0.96px`
-- `16px` → `-0.32px`
-- `14px` 以下 → `normal`
-
-### 圓角
-
-- 按鈕：`6px`
-- 卡片：`8px`
-- 圖片卡片（上方）：`12px 12px 0 0`
-- 標籤 / Badge：`9999px`（Pill）
-- 主要 CTA 按鈕**禁止**使用 Pill 圓角
+- **陰影替代邊框**：禁止使用 `border` CSS 屬性，改用 `box-shadow` 陰影技法（詳見 DESIGN.md Elevation & Depth）
+- **色彩限制**：禁止在 UI Chrome 引入暖色調（橘、黃、綠）；Workflow 強調色僅限對應 Workflow 情境使用
+- **三種字重**：`400`（內文）/ `500`（UI 互動）/ `600`（標題強調），嚴格對應角色（詳見 DESIGN.md Typography）
+- **Letter Spacing**：隨字體尺寸縮放，數值以 DESIGN.md Typography token 為準
+- **圓角**：按元件類型套用對應 `rounded` token；主要 CTA 按鈕禁止使用 Pill 圓角（詳見 DESIGN.md Shapes）
 
 ---
 
@@ -133,9 +80,27 @@ src/
 2. **優先使用 Signals**：State 邏輯不使用 BehaviorSubject（除非有 RxJS 整合需求）
 3. **SCSS 優先**：樣式以 SCSS 撰寫，善用 CSS 自訂屬性（`--variable`）
 4. **響應式優先**：元件設計從行動裝置出發（Mobile-first），使用 DESIGN.md 第 8 節斷點
-5. **無障礙**：所有互動元件須具備 Focus Ring（`2px solid hsla(212,100%,48%,1)`）及 `aria-*` 屬性
+5. **無障礙**：所有互動元件須具備 Focus Ring（`2px solid var(--color-focus)`，色值見 DESIGN.md `focus` token）及 `aria-*` 屬性
 6. **禁止引入外部 UI 函式庫**（如 Angular Material、PrimeNG）—— 設計系統完全自製
 7. **效能**：圖片使用 `NgOptimizedImage`，延遲載入使用 `@defer`
+
+---
+
+## Agent Prompt 速查
+
+### 元件 Prompt 範本
+- 「生成 Hero 區塊：白色背景，48px Geist weight 600 標題，letter-spacing -2.4px，#171717 色。次標題 20px weight 400，#4d4d4d。深色 CTA 按鈕（#171717，6px 圓角，8px 16px padding）與白色 ghost 按鈕（陰影邊框，6px 圓角）。」
+- 「生成卡片：白色背景，禁止 CSS border，使用陰影堆疊邊框。8px 圓角。標題 24px Geist weight 600，letter-spacing -0.96px。內文 16px weight 400，#4d4d4d。」
+- 「生成 Pill badge：#ebf5ff 背景，#0068d6 文字，9999px 圓角，0px 10px padding，12px Geist weight 500。」
+- 「生成 Workflow 區塊，三步驟：Develop（#0a72ef）→ Preview（#de1d8d）→ Ship（#ff5b4f）。各步驟：14px Geist Mono uppercase 標籤 + 24px weight 600 標題 + 16px weight 400 說明文字。」
+
+### 迭代原則
+1. 陰影替代邊框 — `var(--shadow-border)` 是所有邊框的基礎（陰影值見 DESIGN.md Elevation & Depth）
+2. Letter-spacing 隨字體縮放，以 DESIGN.md Typography token 為準
+3. 三種字重：400（閱讀）/ 500（互動）/ 600（強調），嚴格對應
+4. 色彩是功能性的，非裝飾性 — Workflow 色標示流程階段，不可挪作他用
+5. 卡片陰影的 `#fafafa` inner ring 是 Vercel 卡片視覺特徵，不可省略
+6. 技術標籤用 Geist Mono uppercase，其餘一律 Geist Sans
 
 ---
 
