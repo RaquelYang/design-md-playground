@@ -81,8 +81,7 @@ src/
 3. **SCSS 優先**：樣式以 SCSS 撰寫，善用 CSS 自訂屬性（`--variable`）
 4. **響應式優先**：元件設計從行動裝置出發（Mobile-first），使用 DESIGN.md 第 8 節斷點
 5. **無障礙**：所有互動元件須具備 Focus Ring（`2px solid var(--color-focus)`，色值見 DESIGN.md `focus` token）及 `aria-*` 屬性
-6. **禁止引入外部 UI 函式庫**（如 Angular Material、PrimeNG）—— 設計系統完全自製
-7. **效能**：圖片使用 `NgOptimizedImage`，延遲載入使用 `@defer`
+6. **效能**：圖片使用 `NgOptimizedImage`，延遲載入使用 `@defer`
 
 ---
 
