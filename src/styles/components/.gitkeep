@@ -1,0 +1,3 @@
+// components/
+// 存放元件層級 SCSS partial（非 Angular 元件的 .component.scss）
+// 例：_button.scss、_card.scss、_badge.scss

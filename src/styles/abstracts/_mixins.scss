@@ -1,5 +1,5 @@
 // ─── SCSS Mixins ──────────────────────────────────────────────────────────────
-// 使用方式：在元件 SCSS 中 @use '../../styles/mixins' as *;
+// 使用方式：在元件 SCSS 中 @use 'styles/abstracts/mixins' as *;
 
 // ─── 響應式斷點（DESIGN.md 第 8 節，Mobile-first）────────────────────────────
 $breakpoints: (

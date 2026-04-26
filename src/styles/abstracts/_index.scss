@@ -1,0 +1,4 @@
+// abstracts/ 進入點
+// 彙整所有 abstracts partial，供其他資料夾 @use 'styles/abstracts' 使用
+@forward 'variables';
+@forward 'mixins';

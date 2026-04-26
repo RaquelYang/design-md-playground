@@ -1,0 +1,3 @@
+// layout/
+// 存放版面佈局 SCSS partial（全域 grid、header、footer 佈局）
+// 例：_grid.scss、_header.scss、_footer.scss

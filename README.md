@@ -29,12 +29,19 @@ design-md-playground/
     ├── index.html
     │
     ├── styles.scss                  # 全域樣式進入點（只做 @use，不寫規則）
-    ├── styles/                      # 全域樣式 Partial（透過 styles.scss 統一載入）
-    │   ├── _material.scss           # Angular Material M3 Theme 定義 + 元件覆寫
-    │   ├── _variables.scss          # DESIGN.md 所有 CSS 自訂屬性 Token
-    │   ├── _reset.scss              # CSS Reset + body 基礎樣式
-    │   ├── _mixins.scss             # SCSS Mixin（respond-to / focus-ring / shadow）
-    │   └── _typography.scss         # 排版輔助類別（.text-display-hero 等）
+    ├── styles/                      # 全域樣式（7-1 Pattern，透過 styles.scss 統一載入）
+    │   ├── abstracts/               # 設計 Token + SCSS 工具（不輸出 CSS）
+    │   │   ├── _variables.scss      # DESIGN.md 所有 CSS 自訂屬性 Token
+    │   │   └── _mixins.scss         # SCSS Mixin（respond-to / focus-ring / shadow）
+    │   ├── base/                    # 全域基礎樣式
+    │   │   ├── _reset.scss          # CSS Reset + body 基礎樣式
+    │   │   └── _typography.scss     # 排版輔助類別（.text-display-hero 等）
+    │   ├── components/              # 元件層級共用 SCSS（_button.scss 等）
+    │   ├── layout/                  # 全域版面佈局 SCSS（_grid.scss 等）
+    │   ├── pages/                   # 頁面專屬 SCSS
+    │   ├── themes/                  # 主題切換 SCSS（Dark Mode 等）
+    │   └── vendors/                 # 第三方套件樣式
+    │       └── _material.scss       # Angular Material M3 Theme 定義 + 元件覆寫
     │
     └── app/
         ├── app.ts                   # 根元件（僅 <router-outlet />）
@@ -122,7 +129,7 @@ var(--spacing-section)        // 80px
 ### SCSS Mixin（在元件 SCSS 中 `@use`）
 
 ```scss
-@use '../../styles/mixins' as *;
+@use '../../styles/abstracts/mixins' as *;
 
 // 響應式斷點（Mobile-first）
 @include respond-to('tablet-sm') { ... }  // 768px+
