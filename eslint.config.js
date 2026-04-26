@@ -3,6 +3,7 @@ const eslint = require('@eslint/js');
 const { defineConfig } = require('eslint/config');
 const tseslint = require('typescript-eslint');
 const angular = require('angular-eslint');
+const rxjs = require('eslint-plugin-rxjs-x');
 
 module.exports = defineConfig([
     {
@@ -12,8 +13,14 @@ module.exports = defineConfig([
             tseslint.configs.recommended,
             tseslint.configs.stylistic,
             angular.configs.tsRecommended,
+            rxjs.configs.recommended,
         ],
         processor: angular.processInlineTemplates,
+        languageOptions: {
+            parserOptions: {
+                projectService: true,
+            },
+        },
         rules: {
             // ── Selector 命名規範 ──────────────────────────────────────────
             '@angular-eslint/directive-selector': [
@@ -50,6 +57,26 @@ module.exports = defineConfig([
                 'error',
                 { allow: ['overrideMethods'] },
             ],
+
+            // ── RxJS 最佳實踐 ──────────────────────────────────────────────
+            // 禁止在 subscribe 內巢狀 subscribe（應改用 switchMap/mergeMap）
+            'rxjs-x/no-nested-subscribe': 'error',
+            // subscribe 沒有處理 error callback（應提供第二個參數）
+            'rxjs-x/no-ignored-error': 'error',
+            // 有 Observable 未被訂閱也未被 pipe（可能遺漏）
+            'rxjs-x/no-ignored-observable': 'warn',
+            // 禁止 Subject 在 unsubscribe 後繼續使用
+            'rxjs-x/no-subject-unsubscribe': 'error',
+            // takeUntil 必須放在 pipe 的最後一個運算子
+            'rxjs-x/no-unsafe-takeuntil': 'error',
+            // 禁止在 pipe 內不當使用 tap（應只用於 side-effect 觀察）
+            'rxjs-x/no-tap': 'warn',
+            // 禁止使用已廢棄的 RxJS 相容 API
+            'rxjs-x/no-compat': 'error',
+            // Subject 型別必須明確（禁止 Subject<any>）
+            'rxjs-x/no-explicit-generics': 'warn',
+            // Subject 變數名稱必須以 $ 結尾（可辨識 Observable）
+            'rxjs-x/suffix-subjects': 'warn',
         },
     },
     {
