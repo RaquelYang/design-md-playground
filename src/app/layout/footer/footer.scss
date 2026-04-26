@@ -1,0 +1,12 @@
+.footer {
+  box-shadow: var(--shadow-ring);
+  margin-top: auto;
+
+  &__inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: var(--spacing-lg) var(--spacing-md);
+    font-size: 12px;
+    color: var(--color-text-muted);
+  }
+}

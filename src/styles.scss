@@ -1,1 +1,8 @@
-/* You can add global styles to this file, and also import other style files */
+// ─── Global Styles Entry Point ───────────────────────────────────────────────
+// 順序不可調換：material 必須最先（mat.core() 需最早執行）
+@use 'styles/material';   // Material M3 Theme + 元件覆寫
+@use 'styles/variables';  // DESIGN.md CSS 自訂屬性 Token
+@use 'styles/reset';      // CSS Reset + 基礎 body 樣式
+@use 'styles/typography'; // 排版輔助類別
+@use 'styles/mixins';     // SCSS Mixin（不輸出 CSS，僅定義）
+

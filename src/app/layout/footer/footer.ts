@@ -1,11 +1,11 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
 
 @Component({
-  selector: 'app-root',
+  selector: 'app-footer',
   standalone: true,
-  imports: [RouterOutlet],
+  imports: [],
   changeDetection: ChangeDetectionStrategy.OnPush,
-  template: `<router-outlet />`,
+  templateUrl: './footer.html',
+  styleUrl: './footer.scss',
 })
-export class App {}
+export class FooterComponent {}
