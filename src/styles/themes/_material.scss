@@ -34,34 +34,78 @@ html {
 }
 
 // ─── Material 元件覆寫：遵循 DESIGN.md shadow-as-border 哲學 ─────────────────
+// 使用 html 前綴確保特異性 (0,0,1,1) > Material 產生的 (0,0,1,0)
 
-.mat-mdc-card {
-    box-shadow: var(--shadow-card) !important;
-    border-radius: var(--radius-card) !important;
+html .mat-mdc-card {
+    box-shadow: var(--shadow-card);
+    border-radius: var(--radius-card);
 }
 
-.mat-mdc-button,
-.mat-mdc-raised-button,
-.mat-mdc-outlined-button {
-    border-radius: var(--radius-button) !important;
-    font-family: var(--font-sans) !important;
-    font-weight: 500 !important;
-    font-size: 14px !important;
+html .mat-mdc-button,
+html .mat-mdc-raised-button,
+html .mat-mdc-outlined-button {
+    border-radius: var(--radius-button);
+    font-family: var(--font-sans);
+    font-weight: 500;
+    font-size: 14px;
 
     &:focus-visible {
-        outline: 2px solid var(--color-focus) !important;
-        outline-offset: 2px !important;
+        outline: 2px solid var(--color-focus);
+        outline-offset: 2px;
     }
 }
 
-.mat-mdc-form-field {
-    font-family: var(--font-sans) !important;
+html .mat-mdc-form-field {
+    font-family: var(--font-sans);
 }
 
-.mat-mdc-chip {
-    border-radius: var(--radius-pill) !important;
-    background-color: var(--color-badge-bg) !important;
-    color: var(--color-badge-text) !important;
-    font-size: 12px !important;
-    font-weight: 500 !important;
+// ─── Header Hire Me Button ────────────────────────────────────────────────────
+// 元件 SCSS 的 [_ngcontent] 無法穿透 MDC 內部元素，改在全域樣式以高特異性覆寫
+html .header__hire-btn.mat-mdc-unelevated-button {
+    background-color: var(--color-text-primary);
+
+    .mdc-button__label {
+        color: var(--color-bg);
+    }
+}
+
+html .mat-mdc-chip {
+    --mdc-chip-outline-color: transparent;
+    --mdc-chip-flat-outline-color: transparent;
+    --mdc-chip-outline-width: 0;
+    --mdc-chip-flat-outline-width: 0;
+    --mdc-chip-elevated-container-color: var(--color-badge-bg);
+    --mat-chip-hover-state-layer-color: transparent;
+    --mat-chip-selected-hover-state-layer-color: transparent;
+    --mat-chip-focus-state-layer-color: transparent;
+    --mat-chip-hover-state-layer-opacity: 0;
+    border-radius: var(--radius-pill);
+    background-color: var(--color-badge-bg);
+    color: var(--color-badge-text);
+    font-size: 12px;
+    font-weight: 500;
+
+    .mdc-evolution-chip__ripple {
+        border-width: 0;
+        border-color: transparent;
+        background-color: var(--color-badge-bg);
+        border-radius: inherit;
+    }
+
+    // 移除 hover/focus state layer overlay
+    .mat-mdc-chip-focus-overlay {
+        background: transparent;
+        opacity: 0;
+    }
+
+    &::after,
+    &::before {
+        border: none;
+        outline: none;
+    }
+
+    &.mdc-evolution-chip {
+        border: none;
+        outline: none;
+    }
 }

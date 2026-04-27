@@ -56,16 +56,16 @@
 
     // ─── CV Button ─────────────────────────────────────────────────────────
     &__cv-btn {
-        height: auto !important;
-        padding: 12px 24px !important;
+        height: auto;
+        padding: 12px 24px;
         margin-top: var(--spacing-md);
-        font-family: var(--font-sans) !important;
-        font-size: 14px !important;
-        font-weight: 500 !important;
-        color: var(--color-text-primary) !important;
-        border-color: transparent !important;
-        border-radius: var(--radius-button) !important;
-        box-shadow: var(--shadow-border) !important;
+        font-family: var(--font-sans);
+        font-size: 14px;
+        font-weight: 500;
+        color: var(--color-text-primary);
+        border-color: transparent;
+        border-radius: var(--radius-button);
+        box-shadow: var(--shadow-border);
 
         &:focus-visible {
             outline: 2px solid var(--color-focus);
@@ -84,8 +84,8 @@
     &__card {
         width: 100%;
         overflow: hidden;
-        border-radius: var(--radius-card) !important;
-        box-shadow: var(--shadow-card) !important;
+        border-radius: var(--radius-card);
+        box-shadow: var(--shadow-card);
     }
 
     &__avatar {
@@ -93,7 +93,7 @@
         align-items: center;
         justify-content: center;
         width: 100%;
-        aspect-ratio: 4 / 5;
+        aspect-ratio: 4 / 2;
         background-color: var(--color-surface);
         border-radius: 12px 12px 0 0;
     }
@@ -106,7 +106,7 @@
     }
 
     &__card-body {
-        padding: var(--spacing-md) !important;
+        padding: var(--spacing-md);
         text-align: center;
     }
 
@@ -133,14 +133,41 @@
     }
 
     &__social-btn {
-        width: 36px !important;
-        height: 36px !important;
-        color: var(--color-text-primary) !important;
-        border-radius: var(--radius-button) !important;
-        box-shadow: var(--shadow-border) !important;
+        --mdc-icon-button-state-layer-size: 36px;
+        --mat-icon-button-state-layer-color: transparent;
+        --mat-icon-button-ripple-color: transparent;
+        --mdc-icon-button-icon-color: var(--color-text-primary);
+
+        width: 36px;
+        height: 36px;
+        padding: 0;
+        color: var(--color-text-primary);
+        border-radius: var(--radius-button);
+        box-shadow: var(--shadow-border);
+
+        // 移除 MDC persistent ripple 圓形底層
+        .mat-mdc-button-persistent-ripple {
+            border-radius: var(--radius-button);
+
+            &::before {
+                background-color: transparent;
+            }
+        }
+
+        .mat-icon {
+            width: 18px;
+            height: 18px;
+            font-size: 18px;
+            color: var(--color-text-primary);
+        }
 
         &:hover {
-            color: var(--color-link) !important;
+            color: var(--color-link);
+            box-shadow: var(--shadow-card);
+
+            .mat-icon {
+                color: var(--color-link);
+            }
         }
 
         &:focus-visible {
@@ -167,11 +194,11 @@
     }
 
     &__chip {
-        font-family: var(--font-sans) !important;
-        font-size: 12px !important;
-        font-weight: 500 !important;
-        color: var(--color-badge-text) !important;
-        background-color: var(--color-badge-bg) !important;
-        border-radius: var(--radius-pill) !important;
+        font-family: var(--font-sans);
+        font-size: 12px;
+        font-weight: 500;
+        color: var(--color-badge-text);
+        background-color: var(--color-badge-bg);
+        border-radius: var(--radius-pill);
     }
 }

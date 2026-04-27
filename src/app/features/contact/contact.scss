@@ -48,11 +48,11 @@
     &__card {
         max-width: 560px;
         margin: 0 auto;
-        border-radius: var(--radius-card) !important;
-        box-shadow: var(--shadow-card) !important;
+        border-radius: var(--radius-card);
+        box-shadow: var(--shadow-card);
 
         mat-card-content {
-            padding: var(--spacing-lg) !important;
+            padding: var(--spacing-lg);
         }
     }
 
@@ -70,30 +70,30 @@
         .mdc-notched-outline__leading,
         .mdc-notched-outline__notch,
         .mdc-notched-outline__trailing {
-            border-color: var(--color-border) !important;
+            border-color: var(--color-border);
         }
 
         &:focus-within {
             .mdc-notched-outline__leading,
             .mdc-notched-outline__notch,
             .mdc-notched-outline__trailing {
-                border-color: var(--color-focus) !important;
-                border-width: 2px !important;
+                border-color: var(--color-focus);
+                border-width: 2px;
             }
         }
 
         .mat-mdc-form-field-label {
-            font-family: var(--font-sans) !important;
-            font-size: 12px !important;
-            font-weight: 500 !important;
-            color: var(--color-text-primary) !important;
+            font-family: var(--font-sans);
+            font-size: 12px;
+            font-weight: 500;
+            color: var(--color-text-primary);
         }
 
         input,
         textarea {
-            font-family: var(--font-sans) !important;
-            font-size: 14px !important;
-            color: var(--color-text-primary) !important;
+            font-family: var(--font-sans);
+            font-size: 14px;
+            color: var(--color-text-primary);
         }
     }
 
@@ -104,14 +104,14 @@
         align-items: center;
         justify-content: center;
         width: 100%;
-        height: auto !important;
-        padding: 14px !important;
-        font-family: var(--font-sans) !important;
-        font-size: 14px !important;
-        font-weight: 500 !important;
-        color: var(--color-bg) !important;
-        background-color: var(--color-text-primary) !important;
-        border-radius: var(--radius-button) !important;
+        height: auto;
+        padding: 14px;
+        font-family: var(--font-sans);
+        font-size: 14px;
+        font-weight: 500;
+        color: var(--color-bg);
+        background-color: var(--color-text-primary);
+        border-radius: var(--radius-button);
 
         &:disabled {
             opacity: 0.6;

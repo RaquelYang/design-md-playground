@@ -1,8 +1,5 @@
 {
-  "extends": [
-    "stylelint-config-standard-scss",
-    "stylelint-config-recess-order"
-  ],
+  "extends": ["stylelint-config-standard-scss", "stylelint-config-recess-order"],
   "rules": {
     "color-no-invalid-hex": true,
     "shorthand-property-no-redundant-values": true,
@@ -19,7 +16,7 @@
 
     "property-disallowed-list": ["border"],
 
-    "custom-property-pattern": "^(color|font|radius|shadow|mat|spacing|breakpoint|z)-[a-z0-9-]+$",
+    "custom-property-pattern": "^(color|font|radius|shadow|mat|mdc|spacing|breakpoint|z)-[a-z0-9-]+$",
 
     "color-hex-length": null,
     "color-function-notation": null,

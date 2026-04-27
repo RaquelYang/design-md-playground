@@ -52,16 +52,16 @@
 
     // ─── Card ──────────────────────────────────────────────────────────────
     &__card {
-        border-radius: var(--radius-card) !important;
-        box-shadow: var(--shadow-card) !important;
+        border-radius: var(--radius-card);
+        box-shadow: var(--shadow-card);
     }
 
     &__card-header {
-        padding: 24px 24px 0 !important;
+        padding: 24px 24px 0;
     }
 
     &__card-body {
-        padding: 16px 24px 24px !important;
+        padding: 16px 24px 24px;
     }
 
     &__category {
