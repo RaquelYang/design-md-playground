@@ -1,0 +1,29 @@
+<section class="skills" id="skills" aria-labelledby="skills-heading">
+    <div class="skills__header">
+        <span class="skills__label">SKILLS</span>
+        <h2 id="skills-heading" class="skills__heading">Skills &amp; Tools</h2>
+    </div>
+
+    <div class="skills__grid" role="list">
+        @for (group of skillGroups(); track group.category) {
+            <mat-card class="skills__card" appearance="outlined" role="listitem">
+                <mat-card-header class="skills__card-header">
+                    <h3 class="skills__category">{{ group.category }}</h3>
+                </mat-card-header>
+                <mat-card-content class="skills__card-body">
+                    <ul class="skills__list" [attr.aria-label]="group.category + ' 技能清單'">
+                        @for (skill of group.skills; track skill) {
+                            <li class="skills__item">
+                                <span
+                                    class="skills__dot"
+                                    [style.background-color]="group.dotColor"
+                                    aria-hidden="true"></span>
+                                <span class="skills__name">{{ skill }}</span>
+                            </li>
+                        }
+                    </ul>
+                </mat-card-content>
+            </mat-card>
+        }
+    </div>
+</section>

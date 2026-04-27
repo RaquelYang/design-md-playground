@@ -6,12 +6,10 @@ export const routes: Routes = [
         loadComponent: () =>
             import('./layout/main-layout/main-layout').then(m => m.MainLayoutComponent),
         children: [
-            // Feature routes go here, e.g.:
-            // {
-            //   path: 'dashboard',
-            //   loadComponent: () =>
-            //     import('./features/dashboard/dashboard').then(m => m.DashboardComponent),
-            // },
+            {
+                path: '',
+                loadComponent: () => import('./features/home/home').then(m => m.HomeComponent),
+            },
         ],
     },
 ];

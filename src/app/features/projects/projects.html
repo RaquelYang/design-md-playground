@@ -1,0 +1,67 @@
+<section class="projects" id="projects" aria-labelledby="projects-heading">
+    <!-- Section Header -->
+    <div class="projects__header">
+        <span class="projects__label">WORK</span>
+        <h2 id="projects-heading" class="projects__heading">Selected Projects</h2>
+        <p class="projects__sub">A selection of my recent work</p>
+    </div>
+
+    <!-- Filter Tabs -->
+    <div class="projects__filters" role="tablist" aria-label="專案分類篩選">
+        @for (tab of tabs; track tab.value) {
+            <button
+                class="projects__filter-tab"
+                [class.projects__filter-tab--active]="activeFilter() === tab.value"
+                (click)="setFilter(tab.value)"
+                role="tab"
+                [attr.aria-selected]="activeFilter() === tab.value"
+                [attr.aria-label]="tab.label + ' 篩選'">
+                {{ tab.label }}
+            </button>
+        }
+    </div>
+
+    <!-- Project Cards Grid -->
+    <div class="projects__grid" role="list">
+        @for (project of filteredProjects(); track project.title) {
+            <mat-card class="projects__card" appearance="outlined" role="listitem">
+                <!-- Project Image -->
+                <div class="projects__card-image" aria-hidden="true">
+                    <mat-icon class="projects__card-image-icon">web_asset</mat-icon>
+                </div>
+
+                <mat-card-content class="projects__card-body">
+                    <!-- Tech Badges -->
+                    <mat-chip-set class="projects__techs" aria-label="使用技術">
+                        @for (tech of project.techs; track tech) {
+                            <mat-chip class="projects__tech-chip">{{ tech }}</mat-chip>
+                        }
+                    </mat-chip-set>
+
+                    <!-- Title -->
+                    <h3 class="projects__card-title">{{ project.title }}</h3>
+
+                    <!-- Description -->
+                    <p class="projects__card-desc">{{ project.description }}</p>
+                </mat-card-content>
+
+                <!-- Card Footer -->
+                <mat-card-actions class="projects__card-footer">
+                    <a [href]="project.liveUrl" class="projects__view-link" aria-label="查看專案 {{ project.title }}">
+                        View Project
+                        <mat-icon class="projects__link-arrow">arrow_forward</mat-icon>
+                    </a>
+                    <a
+                        [href]="project.githubUrl"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        mat-icon-button
+                        class="projects__github-btn"
+                        aria-label="{{ project.title }} GitHub 連結">
+                        <mat-icon>code</mat-icon>
+                    </a>
+                </mat-card-actions>
+            </mat-card>
+        }
+    </div>
+</section>

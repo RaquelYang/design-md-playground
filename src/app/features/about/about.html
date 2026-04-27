@@ -1,0 +1,80 @@
+<section class="about" id="about" aria-labelledby="about-heading">
+    <div class="about__container">
+        <!-- Left: Text Content -->
+        <div class="about__content">
+            <span class="about__label">ABOUT</span>
+            <h2 id="about-heading" class="about__heading">About Me</h2>
+
+            <p class="about__body">
+                I'm a frontend developer with a passion for building high-quality web experiences. I specialize in
+                Angular and TypeScript, crafting applications that are fast, accessible, and delightful to use.
+            </p>
+            <p class="about__body">
+                When I'm not coding, I'm exploring new design systems, contributing to open-source, and experimenting
+                with creative UI patterns that bridge engineering and craft.
+            </p>
+
+            <button mat-stroked-button class="about__cv-btn" aria-label="下載履歷">
+                <mat-icon>download</mat-icon>
+                Download CV
+            </button>
+        </div>
+
+        <!-- Right: Profile Card -->
+        <div class="about__profile">
+            <mat-card class="about__card" appearance="outlined">
+                <div class="about__avatar" aria-hidden="true">
+                    <mat-icon class="about__avatar-icon">person</mat-icon>
+                </div>
+                <mat-card-content class="about__card-body">
+                    <p class="about__name">Alex Chen</p>
+                    <p class="about__title">Frontend Developer</p>
+                </mat-card-content>
+            </mat-card>
+
+            <!-- Social Links -->
+            <div class="about__socials" role="list" aria-label="社群連結">
+                <a
+                    href="https://github.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    mat-icon-button
+                    class="about__social-btn"
+                    aria-label="GitHub"
+                    role="listitem">
+                    <mat-icon fontSet="material-icons">code</mat-icon>
+                </a>
+                <a
+                    href="https://linkedin.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    mat-icon-button
+                    class="about__social-btn"
+                    aria-label="LinkedIn"
+                    role="listitem">
+                    <mat-icon>work</mat-icon>
+                </a>
+                <a
+                    href="https://twitter.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    mat-icon-button
+                    class="about__social-btn"
+                    aria-label="Twitter / X"
+                    role="listitem">
+                    <mat-icon>alternate_email</mat-icon>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Skills Row -->
+    <div class="about__skills">
+        <span class="about__skills-label">TECHNOLOGIES</span>
+        <mat-chip-set aria-label="技術技能">
+            @for (skill of skills(); track skill) {
+                <mat-chip class="about__chip">{{ skill }}</mat-chip>
+            }
+        </mat-chip-set>
+    </div>
+</section>

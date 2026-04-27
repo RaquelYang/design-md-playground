@@ -1,10 +1,39 @@
 <header class="header" role="banner">
-    <nav class="header__nav" aria-label="主要導覽">
-        <a class="header__logo" routerLink="/" aria-label="回到首頁">
-            <!-- Logo Slot -->
-        </a>
-        <ul class="header__links" role="list">
-            <!-- Nav links go here -->
-        </ul>
-    </nav>
+    <mat-toolbar class="header__toolbar">
+        <div class="header__inner">
+            <!-- Logo -->
+            <a class="header__logo" routerLink="/" aria-label="回到首頁" (click)="closeMenu()"> Alex.dev </a>
+
+            <!-- Desktop Nav -->
+            <nav class="header__nav" aria-label="主要導覽">
+                <a class="header__link" routerLink="/" fragment="about" aria-label="關於我">About</a>
+                <a class="header__link" routerLink="/" fragment="projects" aria-label="專案">Projects</a>
+                <a class="header__link" routerLink="/" fragment="skills" aria-label="技能">Skills</a>
+                <a class="header__link" routerLink="/" fragment="contact" aria-label="聯絡">Contact</a>
+                <button mat-flat-button class="header__hire-btn" aria-label="雇用我">Hire Me</button>
+            </nav>
+
+            <!-- Mobile Hamburger -->
+            <button
+                mat-icon-button
+                class="header__hamburger"
+                (click)="toggleMenu()"
+                [attr.aria-expanded]="menuOpen()"
+                aria-label="切換導覽選單"
+                aria-controls="mobile-menu">
+                <mat-icon>{{ menuOpen() ? "close" : "menu" }}</mat-icon>
+            </button>
+        </div>
+    </mat-toolbar>
+
+    <!-- Mobile Menu -->
+    @if (menuOpen()) {
+        <nav id="mobile-menu" class="header__mobile-menu" aria-label="行動版導覽選單">
+            <a class="header__mobile-link" routerLink="/" fragment="about" (click)="closeMenu()">About</a>
+            <a class="header__mobile-link" routerLink="/" fragment="projects" (click)="closeMenu()">Projects</a>
+            <a class="header__mobile-link" routerLink="/" fragment="skills" (click)="closeMenu()">Skills</a>
+            <a class="header__mobile-link" routerLink="/" fragment="contact" (click)="closeMenu()">Contact</a>
+            <a class="header__mobile-link" routerLink="/" fragment="contact" (click)="closeMenu()">Hire Me</a>
+        </nav>
+    }
 </header>

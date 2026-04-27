@@ -1,5 +1,56 @@
 <footer class="footer" role="contentinfo">
     <div class="footer__inner">
-        <!-- Footer content goes here -->
+        <!-- Left: Identity -->
+        <div class="footer__identity">
+            <span class="footer__name">Alex.dev</span>
+            <span class="footer__role">Frontend Developer</span>
+        </div>
+
+        <!-- Center: Nav Links -->
+        <nav class="footer__nav" aria-label="頁尾導覽">
+            <a class="footer__link" href="#about">About</a>
+            <a class="footer__link" href="#projects">Projects</a>
+            <a class="footer__link" href="#skills">Skills</a>
+            <a class="footer__link" href="#contact">Contact</a>
+        </nav>
+
+        <!-- Right: Social Icons -->
+        <div class="footer__socials" role="list" aria-label="社群連結">
+            <a
+                href="https://github.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                mat-icon-button
+                class="footer__social-btn"
+                aria-label="GitHub"
+                role="listitem">
+                <mat-icon>code</mat-icon>
+            </a>
+            <a
+                href="https://linkedin.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                mat-icon-button
+                class="footer__social-btn"
+                aria-label="LinkedIn"
+                role="listitem">
+                <mat-icon>work</mat-icon>
+            </a>
+            <a
+                href="https://twitter.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                mat-icon-button
+                class="footer__social-btn"
+                aria-label="Twitter / X"
+                role="listitem">
+                <mat-icon>alternate_email</mat-icon>
+            </a>
+        </div>
+    </div>
+
+    <!-- Copyright Row -->
+    <div class="footer__copyright">
+        <p class="footer__copy-text">&copy; 2026 Alex.dev &mdash; Built with Angular &amp; Geist.</p>
     </div>
 </footer>

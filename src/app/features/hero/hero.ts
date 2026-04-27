@@ -1,13 +1,14 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
+import { MatChipsModule } from '@angular/material/chips';
 import { MatIconModule } from '@angular/material/icon';
 
 @Component({
-    selector: 'app-footer',
+    selector: 'app-hero',
     standalone: true,
-    imports: [MatButtonModule, MatIconModule],
+    imports: [MatButtonModule, MatChipsModule, MatIconModule],
     changeDetection: ChangeDetectionStrategy.OnPush,
-    templateUrl: './footer.html',
-    styleUrl: './footer.scss',
+    templateUrl: './hero.html',
+    styleUrl: './hero.scss',
 })
-export class FooterComponent {}
+export class HeroComponent {}
